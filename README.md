@@ -1,4 +1,4 @@
-# use-render-flash
+# react-use-render-flash
 
 A tiny React hook to visually highlight a component when it re-renders.
 
@@ -9,14 +9,14 @@ A tiny React hook to visually highlight a component when it re-renders.
 ## Install
 
 ```bash
-npm install use-render-flash
+npm install react-use-render-flash
 ```
 
 ## Usage
 
 ```jsx
 import React, { useState } from "react";
-import useRenderFlash from "use-render-flash";
+import useRenderFlash from "react-use-render-flash";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -34,13 +34,12 @@ function Counter() {
 ## API
 
 ```js
-const ref = useRenderFlash((color = "hsl(150, 100%, 35%)"), (duration = "1s"));
+const ref = useRenderFlash(color, duration);
 ```
+- `color` (optional): CSS color for the flash (default: `"hsl(150, 100%, 35%)"`).
+- `duration` (optional): Animation duration (default: `"1s"`).
 
-- `color`: CSS color for the flash (default: green).
-- `duration`: Animation duration (default: 1s).
-
-Attach the returned `ref` to any element you want to flash on re-render.
+Attach the returned `ref` to any element you want to flash on render or re-render.
 
 ## License
 
