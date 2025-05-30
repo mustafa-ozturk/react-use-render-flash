@@ -1,12 +1,47 @@
-# React + Vite
+# use-render-flash
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A tiny React hook to visually highlight a component when it re-renders.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Demo]()
 
-## Expanding the ESLint configuration
+## Install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install use-render-flash
+```
+
+## Usage
+
+```jsx
+import React, { useState } from "react";
+import useRenderFlash from "use-render-flash";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const flashRef = useRenderFlash(); // Optional: useRenderFlash(color, duration)
+
+  return (
+    <div ref={flashRef} style={{ padding: 16 }}>
+      <button onClick={() => setCount((c) => c + 1)}>Increment</button>
+      <div>Count: {count}</div>
+    </div>
+  );
+}
+```
+
+## API
+
+```js
+const ref = useRenderFlash((color = "hsl(150, 100%, 35%)"), (duration = "1s"));
+```
+
+- `color`: CSS color for the flash (default: green).
+- `duration`: Animation duration (default: 1s).
+
+Attach the returned `ref` to any element you want to flash on re-render.
+
+## License
+
+MIT
