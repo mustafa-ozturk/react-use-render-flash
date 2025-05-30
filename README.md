@@ -4,7 +4,7 @@ A tiny React hook to visually highlight a component when it re-renders.
 
 ## Demo
 
-![Demo]()
+![demo](https://github.com/user-attachments/assets/5e809791-4199-4fca-ada0-23ccc530274a)
 
 ## Install
 
