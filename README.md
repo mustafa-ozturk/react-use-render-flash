@@ -9,7 +9,7 @@ A tiny React hook to visually highlight a component when it re-renders.
 ## Install
 
 ```bash
-npm install react-use-render-flash
+npm install mustafa-ozturk/react-use-render-flash
 ```
 
 ## Usage
@@ -36,6 +36,7 @@ function Counter() {
 ```js
 const ref = useRenderFlash(color, duration);
 ```
+
 - `color` (optional): CSS color for the flash (default: `"hsl(150, 100%, 35%)"`).
 - `duration` (optional): Animation duration (default: `"1s"`).
 
